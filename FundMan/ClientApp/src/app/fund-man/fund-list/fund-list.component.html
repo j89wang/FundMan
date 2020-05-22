@@ -1,0 +1,48 @@
+<h4 class="header"><label>Fund Allocation List</label></h4><br/>
+  <div class="row"> 
+    <div class="col-md-13">
+      <h4>Funds Allocation List</h4>
+      <!-- <a (click)="lalert('clicked')">Create owner</a> -->
+    </div>
+  </div>
+  <br>
+  <div class="row" >
+    <div class="col-md-13">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>US Equities (%)</th>
+              <th>Non US Equities (%)</th>
+              <th>Fixed Income (%)</th>
+              <th>Cash (%)</th>
+              <th>Other (%)</th>
+              <th>Name </th>
+              <th>Modified Date</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fa of faList">
+              <td>{{fa.symbol}}</td>
+              <td>{{fa.usequity == null ? 0 : fa.usequity}}</td>
+              <td>{{fa.nonUsequity == null ? 0 : fa.nonUsequity}}</td>
+              <td>{{fa.fixedIncome == null ? 0 : fa.fixedIncome}}</td>
+              <td>{{fa.cash == null ? 0 : fa.cash}}</td>
+              <td>{{fa.other == null ? 0 : fa.other}}</td>
+              <td>{{fa.name == null ? '' : fa.name}}</td>   
+              <td>{{fa.dateModified | date}}</td>
+              <td><button type="button" id="details" class="btn btn-default" (click) = "ViewDetail(fa.symbol)">Details</button></td>
+              <td><button type="button" id="update" class="btn btn-success"  (click) = "UpdateFA(fa.symbol)">Update</button></td>
+              <td><button type="button" id="delete" class="btn btn-danger" (click) = "DeleteFA(fa.symbol)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
