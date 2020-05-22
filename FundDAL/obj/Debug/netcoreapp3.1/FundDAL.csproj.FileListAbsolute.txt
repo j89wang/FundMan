@@ -1,0 +1,10 @@
+C:\Users\jwang\source\repos\MyInvest\FundDAL\bin\Debug\netcoreapp3.1\FundDAL.deps.json
+C:\Users\jwang\source\repos\MyInvest\FundDAL\bin\Debug\netcoreapp3.1\FundDAL.dll
+C:\Users\jwang\source\repos\MyInvest\FundDAL\obj\Debug\netcoreapp3.1\FundDAL.AssemblyInfoInputs.cache
+C:\Users\jwang\source\repos\MyInvest\FundDAL\obj\Debug\netcoreapp3.1\FundDAL.AssemblyInfo.cs
+C:\Users\jwang\source\repos\MyInvest\FundDAL\bin\Debug\netcoreapp3.1\FundDAL.runtimeconfig.json
+C:\Users\jwang\source\repos\MyInvest\FundDAL\bin\Debug\netcoreapp3.1\FundDAL.runtimeconfig.dev.json
+C:\Users\jwang\source\repos\MyInvest\FundDAL\bin\Debug\netcoreapp3.1\FundDAL.pdb
+C:\Users\jwang\source\repos\MyInvest\FundDAL\obj\Debug\netcoreapp3.1\FundDAL.dll
+C:\Users\jwang\source\repos\MyInvest\FundDAL\obj\Debug\netcoreapp3.1\FundDAL.pdb
+C:\Users\jwang\source\repos\MyInvest\FundDAL\obj\Debug\netcoreapp3.1\FundDAL.csprojAssemblyReference.cache
