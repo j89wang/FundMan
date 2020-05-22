@@ -1,0 +1,11 @@
+.vlSelect {
+  margin-top: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+  background-color: silver;
+  vertical-align: middle;
+}
+
+.vlSelect option {
+    background-color: white ;
+}

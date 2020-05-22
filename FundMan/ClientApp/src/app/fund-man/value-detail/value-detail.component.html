@@ -1,0 +1,28 @@
+<ng-container [formGroup]="vForm">
+
+  <table width="99%"><tr style="width: 100%;"><td>
+      <label for="fundName"></label>
+      <input type="text" style="width: 100%;" formControlName="fundName"/>
+    </td><td>
+      <label for="value"></label>
+      <input type="text"  style="width: 100%;" formControlName="value" required />
+      <div class="alert alert-danger" role="alert" *ngIf="mvalue.errors && (mvalue.touched || mvalue.dirty)">              
+        Invalid Value
+      </div>
+    </td>
+    <td>
+      <label for="cyberAccountId"></label>
+      <input type="text"  style="width: 100%;" formControlName="cyberAccountId" required/>
+      <div class="alert alert-danger" role="alert" *ngIf="mgroup.errors && (mgroup.touched || mgroup.dirty)">              
+        Invalid Value
+      </div></td>
+    <td>
+      <label for="date"></label>
+      <input type="text"  style="width: 100%;" formControlName="date"/>
+    </td>
+    <td colspan="4">
+      <button type="button" title="Update" (click)="updateClicked(this.vForm.value)" *ngIf = "!vForm.pristine && vForm.valid">Update</button>
+    </td>
+    </tr>
+    </table>
+</ng-container>
