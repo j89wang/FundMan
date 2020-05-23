@@ -1,0 +1,4 @@
+<h4 class="header"><label>Fund Allocation Chart</label></h4><br/>
+<form [formGroup]="pcForm" autocomplete="off" novalidate> <!-- (ngSubmit)="updateFV(fvForm)" -->
+        <app-canvasjs-chart #myChart *ngIf="this.dtPoints.length > 0" [points] = this.dtPoints [type] = this.type [title] = this.title ></app-canvasjs-chart>
+</form>

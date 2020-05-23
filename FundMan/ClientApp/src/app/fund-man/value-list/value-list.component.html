@@ -1,0 +1,54 @@
+ <h4 class="header"><label>Fund Value List</label></h4><br/>
+ <form [formGroup]="fvForm" autocomplete="off" novalidate (ngSubmit)="updateFV(fvForm)">
+  <div class="row" style="width:100%"> 
+    <div class="col-md-12">
+      <table style="width: 100%;"><tr><td style="width: 15%;">
+      <!-- <mat-form-field>
+        <mat-select [(value)]="accountSelected">
+          <mat-option *ngFor="let accnt of accounts" [value]="accnt">
+            {{ accnt }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <!-- <h4>Basic native select</h4> -->
+      <mat-label>Select an Account: </mat-label>
+    </td>
+    <td width="35%">
+      <mat-form-field>
+        <select matNativeControl class="vlSelect" required (change)="accountChange($event.target.value)">
+          <option *ngFor="let accnt of accounts" [value]="accnt">
+            {{ accnt }}
+          </option>
+        </select>
+      </mat-form-field>
+    </td><td style="width: 50%;"><h4> Total:    {{ sum | currency }}</h4></td></tr></table>
+    </div>
+  </div>
+  <br>
+  <div class="row" >
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><label class="col-md-3">Symbol</label>
+                <label class="col-md-3">Value ($)</label>
+                <label class="col-md-3">Account</label>
+                <label class="col-md-3">Date Modified</label>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fv of fvs">
+                <td>
+                    <app-value-detail formControlName="valueDetail" (updateEvent)="updateFV(fvForm.value)" [fvId] = fv.fvId></app-value-detail>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- <pre>{{ fvForm.value | json }}</pre> -->
