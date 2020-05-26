@@ -21,6 +21,7 @@ import { ValueListComponent } from './fund-man/value-list/value-list.component';
 import { PortfolioChartComponent } from './fund-analysis/portfolio-chart/portfolio-chart.component';
 
 import { from } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { from } from 'rxjs';
       { path: 'fa/:id', component: FundDetailComponent },
       { path: 'updateFA/:id', component: FaUpdateComponent },
       { path: 'analysis', component: PortfolioChartComponent }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   exports: [
     // CanvasjsChart2Component
