@@ -26,7 +26,7 @@ export class ValueListComponent implements OnInit {
   constructor(private svc: FundsAllocService, private datePipe: DatePipe) { }
 
   ngOnInit() {
-      this.svc.getData('api/fv/fvalues').subscribe(data => {
+      this.svc.getData('fv/fvalues').subscribe(data => {
           this.fvs = data as IValue[];
           this.fvsAll = this.fvs;
           this.sum = this.fvs.reduce(this.getSum, 0);
@@ -59,14 +59,14 @@ export class ValueListComponent implements OnInit {
 
   private executeUpdateFV(fvFormValue) {
     const lfv: IValue = {
-      fvId: 0,
+      fvID: 0,
       fundName: fvFormValue.valueDetail.fundName,
       value: fvFormValue.valueDetail.value == null ? 0 : Number(fvFormValue.valueDetail.value),
-      cyberAccountId: fvFormValue.valueDetail.cyberAccountId === null ? ' ' : fvFormValue.valueDetail.cyberAccountId,
+      cyberAccountId: fvFormValue.valueDetail.cyberAccountId === null ? ' ' : fvFormValue.valueDetail.CyberAccountId,
       date: this.datePipe.transform(Date.now(), 'yyyy-MM-dd')
     };
 
-    const apiUrl = 'api/FV/postValue';
+    const apiUrl = 'fv/postValue';
     this.svc.update(apiUrl, lfv)
     .subscribe(res => {
       // console.log('executeUpdateFV ' + res);

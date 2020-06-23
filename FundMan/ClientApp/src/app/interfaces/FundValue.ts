@@ -1,5 +1,5 @@
 export interface IValue {
-    fvId: number;
+    fvID: number;
     value: number;
     fundName: string;
     cyberAccountId: string;

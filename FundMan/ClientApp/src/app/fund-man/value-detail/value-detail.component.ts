@@ -26,15 +26,15 @@ public vForm: FormGroup = new FormGroup({
 
   @Input() fvId: number;
   @Output() updateEvent: EventEmitter<IValue> = new EventEmitter<IValue>();
-  fv: IValue;
+  mfv: IValue;
 
   constructor(private svc: FundsAllocService) { }
 
   ngOnInit() {
-    this.svc.getData('api/fv/' + this.fvId).subscribe(res => {
-      this.fv = res as IValue;
-      this.formatFV(this.fv);
-      this.Refresh(this.fv);
+    this.svc.getData('fv/fundValue/' + this.fvId).subscribe(res => {
+      this.mfv = res as IValue;
+      this.formatFV(this.mfv);
+      this.Refresh(this.mfv);
       // this.formatFA(this.fund);
     });
     this.creatForm();
@@ -52,10 +52,10 @@ public vForm: FormGroup = new FormGroup({
   }
 
   private formatFV(fv: IValue) {
-    fv.fundName = ( fv.fundName === null ||  fv.fundName === undefined ) ? ' ' : fv.fundName;
-    fv.value = ( fv.value === null ||  fv.value === undefined ) ? 0 : fv.value;
-    fv.cyberAccountId = ( fv.cyberAccountId === null ||  fv.cyberAccountId === undefined ) ? ' ' : fv.cyberAccountId;
-    fv.date = ( fv.date === null ||  fv.date === undefined ) ? ' ' : fv.date.toString();
+    this.mfv.fundName = ( fv.fundName === null ||  fv.fundName === undefined ) ? ' ' : fv.fundName;
+    this.mfv.value = ( fv.value === null ||  fv.value === undefined ) ? 0 : fv.value;
+    this.mfv.cyberAccountId = ( fv.cyberAccountId === null ||  fv.cyberAccountId === undefined ) ? ' ' : fv.cyberAccountId;
+    this.mfv.date = ( fv.date === null ||  fv.date === undefined ) ? ' ' : fv.date.toString();
   }
 
 
