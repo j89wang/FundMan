@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class FundListComponent implements OnInit {
 
   faList: IAllocation[];
+  menuText = 'FundAllocation';
+
   constructor(private router: Router, private svc: FundsAllocService) { }
 
   ngOnInit() {

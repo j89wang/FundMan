@@ -2,7 +2,7 @@
   <nav
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
-    <div class="container">
+    <div class="container" style="background-color:gray;">
       <a class="navbar-brand" [routerLink]="['/']"></a>
       <button
         class="navbar-toggler"
@@ -25,17 +25,14 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Fund Value</a>
+            <a  class="nav-link text-dark ActiveMenuItem" [class.boldClass]="isActiveMenuItem('FundValue')" [routerLink]="['/']"><label class="ActiveMenuItem" [class.ActiveMenuItem]="isActiveMenuItem('FundValue')">Fund Value</label></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/allocation']"
-              >Fund Allocation</a
-            >
+            <a  class="nav-link text-dark ActiveMenuItem" [class.boldClass]="isActiveMenuItem('FundAllocation')" [routerLink]="['/allocation']"><label class="ActiveMenuItem" [class.ActiveMenuItem]="isActiveMenuItem('FundAllocation')">Fund Allocation</label></a
+>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/analysis']"
-              >Fund Analysis</a
-            >
+            <a class="nav-link text-dark ActiveMenuItem" [class.boldClass]="isActiveMenuItem('FundAnalysis')" [routerLink]="['/analysis']"><label class="ActiveMenuItem" [class.ActiveMenuItem]="isActiveMenuItem('FundAnalysis')">Fund Analysis</label></a>
           </li>
         </ul>
       </div>

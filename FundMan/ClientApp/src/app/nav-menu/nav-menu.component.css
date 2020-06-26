@@ -16,3 +16,18 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+ul li a {
+  background-color: brown;
+  border-top-left-radius: .8em;
+  border-top-right-radius: .8em;
+  Margin-right: .2em;
+}
+
+.ActiveMenuItem {
+  color: aliceblue;
+}
+
+.InactiveMenuItem {
+  color: black;
+}

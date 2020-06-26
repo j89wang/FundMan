@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IValue } from 'src/app/interfaces/FundValue';
 import { FundsAllocService } from 'src/app/services/srv-funds-alloc.service';
+import { ActiveMenuService } from 'src/app/services/active-menu.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
@@ -14,7 +15,7 @@ export class ValueListComponent implements OnInit {
   fvsAll: IValue[];
   fv: IValue;
   fName: string;
-
+  menuText = 'FundValue';
   accounts: string[];
   accountSelected: string;
   sum: number;
@@ -23,7 +24,7 @@ export class ValueListComponent implements OnInit {
      valueDetail: new FormControl('')
   });
 
-  constructor(private svc: FundsAllocService, private datePipe: DatePipe) { }
+  constructor(private svc: FundsAllocService, private datePipe: DatePipe, private menuService: ActiveMenuService) { }
 
   ngOnInit() {
       this.svc.getData('fv/fvalues').subscribe(data => {
@@ -33,7 +34,9 @@ export class ValueListComponent implements OnInit {
           this.accounts = [... new Set(this.fvs.map(d => d.cyberAccountId))];
           this.accounts.splice(0, 0, 'All');
        });
+       this.menuService.SetCurMenu('FundValue');
   }
+
 
   public filterFV(vl) {
     // console.log(fv);
@@ -75,6 +78,10 @@ export class ValueListComponent implements OnInit {
 
   getSum(total, vl) {
     return total + vl.value;
+  }
+
+  private isCurrentMenu(): boolean {
+    return this.menuText === this.menuService.GetCurMenu();
   }
 
   public accountChange(vl) {

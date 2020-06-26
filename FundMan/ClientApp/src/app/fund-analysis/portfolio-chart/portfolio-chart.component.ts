@@ -14,6 +14,7 @@ import { CanvasjsChartComponent } from '../../shared/Comm/canvasjs-chart/canvasj
   styleUrls: ['./portfolio-chart.component.css', '../../fund-man/fm.shared.css']
 })
 export class PortfolioChartComponent implements OnInit {
+  menuText = 'FundAnalysis';
   fvs: IValue[];
   sum: number;
   dt: IPoint[];

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActiveMenuService } from 'src/app/services/active-menu.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,12 +8,22 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+  constructor(private menuItemService: ActiveMenuService) {
 
+  }
   collapse() {
     this.isExpanded = false;
   }
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  mouseOver(e) {
+    alert(e.target.textContent);
+  }
+
+  isActiveMenuItem(title): boolean {
+    return title === this.menuItemService.GetCurMenu();
   }
 }
